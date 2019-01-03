@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="/css/style.css"></link>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/angular/angular.js"></script>
+    <script src="/controller/CultureBotController.js"></script>
+    <script src="/service/CultureBotService.js"></script>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+        .flexbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    </style>
+ </head>
+<body>
+
+<div ng-app="cultureBot">
+    <div ng-controller="CultureBotController as vm">
+        <div class="flexbox-container" ng-show="vm.newState">
+            <div>
+                <a>
+                    <img alt="Add to Slack" height="40" width="139" href=vm.hrefInit
+                         src="https://platform.slack-edge.com/img/add_to_slack.png"
+                         srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x,
+                         https://platform.slack-edge.com/img/add_to_slack@2x.png 2x">
+                </a>
+            </div>
+        </div>
+        <div class="container" ng-hide="vm.newState">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ScreenName</th>
+                    <th>RealName</th>
+                    <th>Add episode 22</th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr ng-repeat="user in vm.users track by $index">
+                    <td>{{user.name}}</td>
+                    <td>{{user.real_name}}</td>
+                    <td><button type="button" class="btn btn-primary" ng-click="vm.createChannel(user.id)">Add</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
