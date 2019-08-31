@@ -1,3 +1,7 @@
+/**
+ * @author Nivedha
+ *
+ */
 var mongoose = require('mongoose');
 var util = require('../util');
 var Schema = mongoose.Schema;

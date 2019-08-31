@@ -1,4 +1,8 @@
 /**
+ * @author Nivedha
+ *
+ */
+/**
  * This method is responsible for writing err/response to response
  *
  * @param   {Object}    err       error from endpoint processing if any

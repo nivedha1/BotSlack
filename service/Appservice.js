@@ -1,3 +1,7 @@
+/**
+ * @author Nivedha
+ *
+ */
 var slackClient =  require('@slack/client');
 var MemoryDataStore = require('@slack/client').MemoryDataStore;
 var slackEvents = slackClient.CLIENT_EVENTS.RTM;
